@@ -3,6 +3,7 @@
         <title>CI Blog</title>
         <link rel="stylesheet" href="<?php echo base_url() ?>assets/styles/bootstrap.min.css">
         <link rel="stylesheet" href="<?php echo base_url() ?>assets/styles/style.css">
+        <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
     </head>
 
     <body>
@@ -12,15 +13,19 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
+                <ul class="navbar-nav d-flex w-100">
+                    <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url(); ?>">Home<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url(); ?>about">About</a>
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url(); ?>posts">Blogs<span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item ml-auto">
+                        <a class="nav-link" href="<?php echo base_url(); ?>posts/create">Create Post<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
