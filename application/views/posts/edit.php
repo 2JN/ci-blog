@@ -14,5 +14,18 @@
     <textarea name="body" class="form-control" aria-describedby="postBody" placeholder="Write your thoughts..."><?= $post['body']; ?></textarea>
     <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   </div>
+  <div class="form-group">
+    <label for="category_id">Category</label>
+    <select name="category_id" class="form-control">
+      <?php foreach($categories as $category): ?>
+        <option
+          value="<?= $category['id']; ?>"
+          selected="<?= $category['id'] === $post['category_id'] ? 'selected' : '' ?>"
+        >
+          <?= $category['name']; ?>
+        </option>
+      <?php endforeach; ?>
+    </select>
+  </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
