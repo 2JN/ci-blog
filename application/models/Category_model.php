@@ -4,7 +4,7 @@ class Category_model extends CI_Model {
         $this->load->database();
     }
 
-    public function get_categories($id) {
+    public function get_categories($id = NULL) {
         if ($id === NULL) {
             $this->db->order_by('name');
             $query = $this->db->get('categories');
