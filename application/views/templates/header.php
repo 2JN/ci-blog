@@ -23,9 +23,15 @@
                     <li class="nav-item">
                         <a class="nav-link" href="<?php echo base_url(); ?>posts">Blogs<span class="sr-only">(current)</span></a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url(); ?>categories">Categories<span class="sr-only">(current)</span></a>
+                    </li>
 
                     <li class="nav-item ml-auto">
                         <a class="nav-link" href="<?php echo base_url(); ?>posts/create">Create Post<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?php echo base_url(); ?>categories/create">Create Category<span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
