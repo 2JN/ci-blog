@@ -8,12 +8,14 @@
 
 <hr>
 
-<div class="row align-items-start px-3">
-    <?= form_open('/posts/delete/'.$post['id']) ?>
-        <button type="submit" class="btn btn-danger">Delete</button>
-    </form>
-    <a href="<?= base_url(); ?>/posts/edit/<?= $post['slug']; ?>" class="btn btn-primary ml-3">Edit</a>
-</div>
+<?php if($this->session->userdata('user_id') === $post['user_id']): ?>
+    <div class="row align-items-start px-3">
+        <?= form_open('/posts/delete/'.$post['id']) ?>
+            <button type="submit" class="btn btn-danger">Delete</button>
+        </form>
+        <a href="<?= base_url(); ?>/posts/edit/<?= $post['slug']; ?>" class="btn btn-primary ml-3">Edit</a>
+    </div>
+<?php endif; ?>
 
 <hr>
 

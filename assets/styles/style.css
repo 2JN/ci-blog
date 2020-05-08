@@ -1,3 +1,7 @@
+p {
+	word-break: break-word;
+}
+
 .post-date {
 	background-color: #f4f4f4;
 	display: block;

@@ -27,15 +27,24 @@
                         <a class="nav-link" href="<?php echo base_url(); ?>categories">Categories<span class="sr-only">(current)</span></a>
                     </li>
 
-                    <li class="nav-item ml-auto">
-                        <a class="nav-link" href="<?php echo base_url('users/register'); ?>">Register<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url(); ?>posts/create">Create Post<span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?php echo base_url(); ?>categories/create">Create Category<span class="sr-only">(current)</span></a>
-                    </li>
+                    <?php if(!$this->session->userdata('logged_in')): ?>
+                        <li class="nav-item ml-auto">
+                            <a class="nav-link" href="<?php echo base_url('users/login'); ?>">Login<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo base_url('users/register'); ?>">Register<span class="sr-only">(current)</span></a>
+                        </li>
+                    <?php else: ?>
+                        <li class="nav-item ml-auto">
+                            <a class="nav-link" href="<?php echo base_url('posts/create'); ?>">Create Post<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo base_url('categories/create'); ?>">Create Category<span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="<?php echo base_url('users/logout'); ?>">Logout<span class="sr-only">(current)</span></a>
+                        </li>
+                    <?php endif; ?>
                 </ul>
             </div>
         </nav>
@@ -43,6 +52,18 @@
         <div class="container">
             <?php if($this->session->flashdata('user_registered')): ?>
                 <p class="alert alert-success"><?= $this->session->flashdata('user_registered') ?></p>
+            <?php endif; ?>
+
+            <?php if($this->session->flashdata('login_failed')): ?>
+                <p class="alert alert-danger"><?= $this->session->flashdata('login_failed') ?></p>
+            <?php endif; ?>
+
+            <?php if($this->session->flashdata('login_success')): ?>
+                <p class="alert alert-success"><?= $this->session->flashdata('login_success') ?></p>
+            <?php endif; ?>
+
+            <?php if($this->session->flashdata('logout_success')): ?>
+                <p class="alert alert-success"><?= $this->session->flashdata('logout_success') ?></p>
             <?php endif; ?>
 
             <?php if($this->session->flashdata('post_created')): ?>
